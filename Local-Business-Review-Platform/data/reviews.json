@@ -1,0 +1,79 @@
+[
+    {
+        "id": "1",
+        "business_id": "1",
+        "reviewer_name": "John Smith",
+        "reviewer_email": "john@example.com",
+        "rating": 5,
+        "title": "Best coffee in town!",
+        "content": "I absolutely love the coffee here. The atmosphere is cozy and the staff is friendly. Highly recommended!",
+        "date": "2025-03-15T10:30:00",
+        "approved": true
+    },
+    {
+        "id": "2",
+        "business_id": "1",
+        "reviewer_name": "Sarah Johnson",
+        "reviewer_email": "sarah@example.com",
+        "rating": 4,
+        "title": "Great breakfast options",
+        "content": "The breakfast menu is excellent. I particularly enjoyed the avocado toast. Would definitely come back.",
+        "date": "2025-03-10T09:15:00",
+        "approved": true
+    },
+    {
+        "id": "3",
+        "business_id": "2",
+        "reviewer_name": "Emily Davis",
+        "reviewer_email": "emily@example.com",
+        "rating": 5,
+        "title": "Amazing haircut!",
+        "content": "I got the best haircut of my life here. The stylist really listened to what I wanted and delivered perfectly.",
+        "date": "2025-03-05T14:45:00",
+        "approved": true
+    },
+    {
+        "id": "4",
+        "business_id": "3",
+        "reviewer_name": "Michael Brown",
+        "reviewer_email": "michael@example.com",
+        "rating": 4,
+        "title": "Great equipment, friendly staff",
+        "content": "This gym has all the equipment I need and the staff is very helpful. The only downside is it gets crowded after work.",
+        "date": "2025-02-28T18:20:00",
+        "approved": true
+    },
+    {
+        "id": "5",
+        "business_id": "4",
+        "reviewer_name": "David Wilson",
+        "reviewer_email": "david@example.com",
+        "rating": 3,
+        "title": "Good selection but pricey",
+        "content": "They have a great selection of gadgets, but the prices are a bit higher than online retailers.",
+        "date": "2025-02-20T11:10:00",
+        "approved": true
+    },
+    {
+        "id": "6",
+        "business_id": "6",
+        "reviewer_name": "Lisa Thompson",
+        "reviewer_email": "lisa@example.com",
+        "rating": 5,
+        "title": "Amazing plant selection!",
+        "content": "I found everything I needed for my garden here. The staff was incredibly knowledgeable and helped me choose the right plants for my space.",
+        "date": "2025-03-18T13:45:00",
+        "approved": true
+    },
+    {
+        "id": "7",
+        "business_id": "5",
+        "reviewer_name": "Robert Johnson",
+        "reviewer_email": "robert@example.com",
+        "rating": 4,
+        "title": "Thorough cleaning service",
+        "content": "They did an excellent job cleaning my apartment. Very detail-oriented and professional. Will use their services again.",
+        "date": "2025-03-12T16:30:00",
+        "approved": true
+    }
+]

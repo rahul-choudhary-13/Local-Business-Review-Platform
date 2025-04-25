@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalReviews - Find and Review Local Businesses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h1>LocalReviews</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="business-listing.html">Businesses</a></li>
+                    <li><a href="login.html" id="login-btn">Login</a></li>
+                    <li><a href="register.html" id="register-btn">Register</a></li>
+                    <li><a href="debug.html" id="debug-btn">Debug</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="animate-fade-in gradient-text">Discover and Review Local Businesses</h2>
+                <p class="animate-fade-in-delay">Find the best local businesses with verified reviews from real customers</p>
+                
+                <div class="search-container animate-fade-in-delay-2">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search for businesses...">
+                    </div>
+                    <div class="search-filters">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="restaurant">Restaurants</option>
+                            <option value="salon">Salons</option>
+                            <option value="gym">Gyms</option>
+                            <option value="retail">Retail</option>
+                            <option value="service">Services</option>
+                        </select>
+                        <select id="rating-filter">
+                            <option value="">All Ratings</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4+ Stars</option>
+                            <option value="3">3+ Stars</option>
+                        </select>
+                        <button id="search-btn" class="btn-shine">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+    </section>
+
+    <section class="featured-businesses">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Businesses</h2>
+                <p>Discover top-rated local businesses in your area</p>
+            </div>
+            <div class="business-grid" id="featured-businesses-container">
+                <!-- Business cards will be loaded here via JavaScript -->
+                <div class="loading">Loading featured businesses...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How LocalReviews Works</h2>
+                <p>Simple steps to find and review local businesses</p>
+            </div>
+            <div class="steps-container">
+                <div class="step floating">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Search</h3>
+                    <p>Find businesses by name, category, or location</p>
+                </div>
+                <div class="step floating" style="animation-delay: 0.5s;">
+                    <div class="step-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h3>Discover</h3>
+                    <p>Explore detailed business profiles and reviews</p>
+                </div>
+                <div class="step floating" style="animation-delay: 1s;">
+                    <div class="step-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Review</h3>
+                    <p>Share your experience with the community</p>
+                </div>
+                <div class="step floating" style="animation-delay: 1.5s;">
+                    <div class="step-icon">
+                        <i class="fas fa-thumbs-up"></i>
+                    </div>
+                    <h3>Decide</h3>
+                    <p>Make informed decisions based on real reviews</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="recent-reviews">
+        <div class="container">
+            <div class="section-header">
+                <h2>Recent Reviews</h2>
+                <p>See what people are saying about local businesses</p>
+            </div>
+            <div class="reviews-container" id="recent-reviews-container">
+                <!-- Recent reviews will be loaded here via JavaScript -->
+                <div class="loading">Loading recent reviews...</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Own a Business?</h2>
+                <p>Join LocalReviews to connect with customers and grow your business</p>
+                <a href="register.html" class="btn btn-primary btn-3d">Register Your Business</a>
+            </div>
+        </div>
+        <div class="cta-overlay"></div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <div class="logo">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h2>LocalReviews</h2>
+                    </div>
+                    <p>Connecting people with great local businesses since 2025.</p>
+                    <div class="social-links">
+                        <a href="#" class="hover-lift"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="hover-lift"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="hover-lift"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="hover-lift"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="business-listing.html">Businesses</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Review Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@localreviews.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LocalReviews. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>

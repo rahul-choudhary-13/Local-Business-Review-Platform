@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Review - LocalReviews</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>LocalReviews</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="business-listing.html">Businesses</a></li>
+                    <li><a href="#" id="login-btn">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Write a Review</h2>
+            <p id="business-name">Loading business information...</p>
+        </div>
+    </section>
+
+    <section class="review-form-section">
+        <div class="container">
+            <form id="review-form" class="review-form">
+                <div class="form-group">
+                    <label for="reviewer-name">Your Name:</label>
+                    <input type="text" id="reviewer-name" name="reviewer-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="reviewer-email">Your Email:</label>
+                    <input type="email" id="reviewer-email" name="reviewer-email" required>
+                </div>
+                <div class="form-group">
+                    <label>Rating:</label>
+                    <div class="rating-input">
+                        <div class="stars-input">
+                            <input type="radio" id="star5" name="rating" value="5" required>
+                            <label for="star5"></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="review-title">Review Title:</label>
+                    <input type="text" id="review-title" name="review-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="review-content">Your Review:</label>
+                    <textarea id="review-content" name="review-content" rows="6" required></textarea>
+                </div>
+                <div class="form-notice">
+                    <p>Your review will be visible after admin verification.</p>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn submit-btn">Submit Review</button>
+                    <a href="#" id="cancel-review" class="btn cancel-btn">Cancel</a>
+                </div>
+            </form>
+            <div id="submission-message" class="submission-message hidden"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LocalReviews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/validation.js"></script>
+    <script>
+        // Get business ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const businessId = urlParams.get('id');
+        
+        if (!businessId) {
+            window.location.href = 'business-listing.html';
+        }
+        
+        // Load business name
+        document.addEventListener('DOMContentLoaded', function() {
+            loadBusinessName(businessId);
+            setupReviewForm(businessId);
+        });
+    </script>
+</body>
+</html>

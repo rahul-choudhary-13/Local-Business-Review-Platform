@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - LocalReviews</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h1>LocalReviews</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="business-listing.html">Businesses</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html" class="active">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="auth-container">
+        <div class="auth-header">
+            <h2>Create an Account</h2>
+            <p>Join LocalReviews to discover and review local businesses</p>
+        </div>
+        
+        <div id="register-message" class="message hidden"></div>
+        
+        <div class="register-tabs">
+            <button class="tab-btn active" data-tab="user">User Account</button>
+            <button class="tab-btn" data-tab="business">Business Account</button>
+        </div>
+        
+        <div class="tab-content active" id="user-tab">
+            <form id="user-register-form" class="auth-form" action="php/register.php" method="post">
+                <input type="hidden" name="account_type" value="user">
+                <div class="form-group">
+                    <label for="user-name">Full Name</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="user-name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="user-email">Email Address</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="user-email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="user-password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="user-password" name="password" placeholder="Create a password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="user-confirm-password">Confirm Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="user-confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+                <div class="form-agreement">
+                    <input type="checkbox" id="user-terms" name="terms" required>
+                    <label for="user-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Create Account</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="tab-content" id="business-tab">
+            <form id="business-register-form" class="auth-form" action="php/register.php" method="post">
+                <input type="hidden" name="account_type" value="business">
+                <div class="form-group">
+                    <label for="business-name">Business Name</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-store"></i>
+                        <input type="text" id="business-name" name="business_name" placeholder="Enter your business name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="business-category">Business Category</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-tag"></i>
+                        <select id="business-category" name="business_category" required>
+                            <option value="">Select a category</option>
+                            <option value="restaurant">Restaurant</option>
+                            <option value="salon">Salon</option>
+                            <option value="gym">Gym</option>
+                            <option value="retail">Retail</option>
+                            <option value="service">Service</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="owner-name">Owner/Manager Name</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="owner-name" name="owner_name" placeholder="Enter owner/manager name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="business-email">Business Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="business-email" name="email" placeholder="Enter business email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="business-phone">Business Phone</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="business-phone" name="phone" placeholder="Enter business phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="business-password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="business-password" name="password" placeholder="Create a password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="business-confirm-password">Confirm Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="business-confirm-password" name="confirm_password" placeholder="Confirm your password" required>
+                    </div>
+                </div>
+                <div class="form-agreement">
+                    <input type="checkbox" id="business-terms" name="terms" required>
+                    <label for="business-terms">I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Register Business</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="social-login">
+            <p>Or register with</p>
+            <div class="social-buttons">
+                <button class="social-btn google">
+                    <i class="fab fa-google"></i>
+                    <span>Google</span>
+                </button>
+                <button class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                </button>
+            </div>
+        </div>
+        
+        <div class="auth-footer">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h2>LocalReviews</h2>
+                </div>
+                <p>Connecting people with great local businesses since 2025.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="business-listing.html">Businesses</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Review Street, City, Country</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                <p><i class="fas fa-envelope"></i> info@localreviews.com</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 LocalReviews. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

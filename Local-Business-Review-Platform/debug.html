@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalReviews Debug</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .debug-section {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .debug-section h2 {
+            color: var(--secondary-color);
+            margin-top: 0;
+        }
+        .debug-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .debug-result {
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            overflow: auto;
+            max-height: 400px;
+        }
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>LocalReviews Debug Page</h1>
+    
+    <div class="debug-section">
+        <h2>Data Files</h2>
+        <div class="debug-actions">
+            <button id="check-data" class="btn btn-primary">Check Data Files</button>
+            <button id="create-data" class="btn btn-secondary">Create Sample Data</button>
+        </div>
+        <div id="data-result" class="debug-result">
+            <p>Click "Check Data Files" to see the status of your data files.</p>
+        </div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>API Tests</h2>
+        <div class="debug-actions">
+            <button id="test-businesses" class="btn btn-primary">Test Businesses API</button>
+            <button id="test-reviews" class="btn btn-secondary">Test Reviews API</button>
+        </div>
+        <div id="api-result" class="debug-result">
+            <p>Click one of the buttons above to test the API endpoints.</p>
+        </div>
+    </div>
+    
+    <div class="debug-section">
+        <h2>Navigation</h2>
+        <div class="debug-actions">
+            <a href="index.html" class="btn btn-primary">Go to Homepage</a>
+            <a href="business-listing.html" class="btn btn-secondary">Go to Business Listing</a>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check data files
+            document.getElementById('check-data').addEventListener('click', function() {
+                const resultDiv = document.getElementById('data-result');
+                resultDiv.innerHTML = '<p>Checking data files...</p>';
+                
+                fetch('php/api/debug.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    })
+                    .catch(error => {
+                        resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+                    });
+            });
+            
+            // Create sample data
+            document.getElementById('create-data').addEventListener('click', function() {
+                const resultDiv = document.getElementById('data-result');
+                resultDiv.innerHTML = '<p>Creating sample data...</p>';
+                
+                fetch('php/api/create_data.php')
+                    .then(response => response.json())
+                    .then(data => {
+                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    })
+                    .catch(error => {
+                        resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+                    });
+            });
+            
+            // Test businesses API
+            document.getElementById('test-businesses').addEventListener('click', function() {
+                const resultDiv = document.getElementById('api-result');
+                resultDiv.innerHTML = '<p>Testing businesses API...</p>';
+                
+                fetch('php/api/businesses.php?featured=true')
+                    .then(response => response.json())
+                    .then(data => {
+                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    })
+                    .catch(error => {
+                        resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+                    });
+            });
+            
+            // Test reviews API
+            document.getElementById('test-reviews').addEventListener('click', function() {
+                const resultDiv = document.getElementById('api-result');
+                resultDiv.innerHTML = '<p>Testing reviews API...</p>';
+                
+                fetch('php/api/reviews.php?recent=true')
+                    .then(response => response.json())
+                    .then(data => {
+                        resultDiv.innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
+                    })
+                    .catch(error => {
+                        resultDiv.innerHTML = '<p>Error: ' + error.message + '</p>';
+                    });
+            });
+        });
+    </script>
+</body>
+</html>

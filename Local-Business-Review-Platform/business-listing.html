@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Listings - LocalReviews</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h1>LocalReviews</h1>
+                </a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="business-listing.html" class="active">Businesses</a></li>
+                    <li><a href="login.html" id="login-btn">Login</a></li>
+                    <li><a href="register.html" id="register-btn">Register</a></li>
+                </ul>
+                <div class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-header">
+        <div class="container">
+            <h2>Business Listings</h2>
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> / <span>Businesses</span>
+            </div>
+        </div>
+        <div class="page-header-overlay"></div>
+    </section>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="search-businesses">Search:</label>
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-businesses" placeholder="Business name or keyword">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label for="category-select">Category:</label>
+                    <select id="category-select">
+                        <option value="">All Categories</option>
+                        <option value="restaurant">Restaurants</option>
+                        <option value="salon">Salons</option>
+                        <option value="gym">Gyms</option>
+                        <option value="retail">Retail</option>
+                        <option value="service">Services</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="location-select">Location:</label>
+                    <select id="location-select">
+                        <option value="">All Locations</option>
+                        <!-- Locations will be populated via JavaScript -->
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="rating-select">Rating:</label>
+                    <select id="rating-select">
+                        <option value="">All Ratings</option>
+                        <option value="5">5 Stars</option>
+                        <option value="4">4+ Stars</option>
+                        <option value="3">3+ Stars</option>
+                        <option value="2">2+ Stars</option>
+                        <option value="1">1+ Star</option>
+                    </select>
+                </div>
+                <button id="apply-filters" class="btn btn-primary">Apply Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="businesses-list">
+        <div class="container">
+            <div class="business-grid" id="businesses-container">
+                <!-- Business cards will be loaded here via JavaScript -->
+                <div class="loading">Loading businesses...</div>
+            </div>
+            <div class="pagination" id="pagination-container">
+                <!-- Pagination will be added here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <div class="logo">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h2>LocalReviews</h2>
+                    </div>
+                    <p>Connecting people with great local businesses since 2025.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="business-listing.html">Businesses</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Review Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@localreviews.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 LocalReviews. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

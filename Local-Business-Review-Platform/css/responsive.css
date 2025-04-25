@@ -1,0 +1,136 @@
+/* Responsive Styles */
+
+/* Tablets and smaller desktops */
+@media (max-width: 992px) {
+  .search-container {
+    flex-direction: column;
+  }
+
+  .search-container input,
+  .search-container select {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .search-container input {
+    border-top: none;
+  }
+
+  .reviews-summary {
+    flex-direction: column;
+  }
+
+  .average-rating {
+    padding-right: 0;
+    padding-bottom: 20px;
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 20px;
+  }
+
+  .rating-breakdown {
+    padding-left: 0;
+  }
+
+  .business-header {
+    flex-direction: column;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  header .container {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin-bottom: 15px;
+  }
+
+  nav ul {
+    justify-content: center;
+  }
+
+  nav ul li {
+    margin: 0 10px;
+  }
+
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .business-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-container {
+    grid-template-columns: 1fr;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    width: 100%;
+  }
+
+  .admin-tabs {
+    flex-wrap: wrap;
+  }
+
+  .tab-btn {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .modal-content {
+    margin: 20% auto;
+    padding: 20px;
+    width: 90%;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 24px;
+  }
+
+  .featured-businesses h2,
+  .recent-reviews h2 {
+    font-size: 24px;
+  }
+
+  .business-info-container {
+    padding: 20px;
+  }
+
+  .business-title h1 {
+    font-size: 24px;
+  }
+
+  .reviews-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+  }
+}
